@@ -29,7 +29,7 @@ CCropCtl::CCropCtl(CMainDlg* pMainDlg) {
 	m_bDoTracking = false;
 	m_bTrackingMode = false;
 	m_bDontStartCropOnNextClick = false;
-	m_dCropRectAspectRatio = 0;
+	m_dCropRectAspectRatio = 1.7777;
 	m_nHandleSize = HANDLE_SIZE;
 	m_eHitHandle = HH_None;
 	m_cropStart = CPoint(INT_MIN, INT_MIN);

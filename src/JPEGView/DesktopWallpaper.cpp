@@ -19,8 +19,8 @@ namespace SetDesktopWallpaper {
 	{
 		CRect largestMonitor = CMultiMonitorSupport::GetMonitorRect(-1);
 		bool needsFitToScreen = image.InitOrigWidth() > largestMonitor.Width() || image.InitOrigHeight() > largestMonitor.Height();
-		SetRegistryStringValue(_T("WallpaperStyle"), needsFitToScreen ? _T("6") : _T("0"));
-		SetRegistryStringValue(_T("TileWallpaper"), _T("0"));
+		// SetRegistryStringValue(_T("WallpaperStyle"), needsFitToScreen ? _T("6") : _T("0"));
+		// SetRegistryStringValue(_T("TileWallpaper"), _T("0"));
 
 		void* parameter = (void*)fileName;
 		::SystemParametersInfo(SPI_SETDESKWALLPAPER,
@@ -42,8 +42,8 @@ namespace SetDesktopWallpaper {
 			if (bitmapMatchesDesktop && windowsVersion >= 602) wallpaperStyle = _T("22"); // for Windows 8 ff
 			if (bitmapMatchesDesktop && windowsVersion == 601) tileWallpaper = _T("1"); // for Windows 7
 		}
-		SetRegistryStringValue(_T("WallpaperStyle"), wallpaperStyle);
-		SetRegistryStringValue(_T("TileWallpaper"), tileWallpaper);
+		// SetRegistryStringValue(_T("WallpaperStyle"), wallpaperStyle);
+		// SetRegistryStringValue(_T("TileWallpaper"), tileWallpaper);
 
 		LPCTSTR path = CSettingsProvider::This().WallpaperPath();
 		if (path[0] == 0) return;

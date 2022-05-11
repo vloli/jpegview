@@ -135,9 +135,9 @@ Left                    IDM_PREV
 PgUp                    IDM_PREV
 Ctrl+Left               IDM_TOGGLE
 Ctrl+Right              IDM_TOGGLE
-Home                    IDM_FIRST
-End                     IDM_LAST
-Del                     IDM_MOVE_TO_RECYCLE_BIN_CONFIRM
+// Home                    IDM_FIRST
+// End                     IDM_LAST
+// Del                     IDM_MOVE_TO_RECYCLE_BIN_CONFIRM
 Plus                    IDM_ZOOM_INC
 Ctrl+Shift+Plus         IDM_CONTRAST_CORRECTION_INC
 Ctrl+Alt+Plus           IDM_COLOR_CORRECTION_INC
@@ -154,7 +154,7 @@ F2                      IDM_SHOW_FILEINFO
 Ctrl+F2                 IDM_SHOW_FILENAME
 F3                      IDM_TOGGLE_RESAMPLING_QUALITY
 F4                      IDM_KEEP_PARAMETERS
-F5                      IDM_AUTO_CORRECTION
+// F5                      IDM_AUTO_CORRECTION
 Shift+F5                IDM_AUTO_CORRECTION_SECTION
 F6                      IDM_LDC
 Shift+Ctrl+F6           IDM_LDC_HIGHLIGHTS_INC
@@ -167,20 +167,20 @@ F9                      IDM_LOOP_SIBLINGS
 F11                     IDM_FULL_SCREEN_MODE
 Ctrl+F11                IDM_FIT_WINDOW_TO_IMAGE
 F12                     IDM_SPAN_SCREENS
-Ctrl+F12                IDM_TOGGLE_MONITOR
+// Ctrl+F12                IDM_TOGGLE_MONITOR
 Space                   IDM_TOGGLE_FIT_TO_SCREEN_100_PERCENTS
 Return                  IDM_FIT_TO_SCREEN
 Ctrl+Return             IDM_FILL_WITH_CROP
-Down                    IDM_ROTATE_90
-Up                      IDM_ROTATE_270
+// Down                    IDM_ROTATE_90
+// Up                      IDM_ROTATE_270
 Shift+Up                IDM_PAN_UP
 Shift+Down              IDM_PAN_DOWN
 Shift+Left              IDM_PAN_LEFT
 Shift+Right             IDM_PAN_RIGHT
 Ctrl+Down               IDM_ZOOM_DEC
 Ctrl+Up                 IDM_ZOOM_INC
-Ctrl+A                  IDM_EXCHANGE_PROC_PARAMS
-Ctrl+C                  IDM_COPY
+// Ctrl+A                  IDM_EXCHANGE_PROC_PARAMS
+// Ctrl+C                  IDM_COPY
 C                       IDM_SORT_CREATION_DATE
 Ctrl+N                  IDM_SHOW_NAVPANEL
 N                       IDM_SORT_NAME
@@ -199,7 +199,17 @@ Ctrl+R                  IDM_RELOAD
 Alt+R                   IDM_SLIDESHOW_RESUME
 Ctrl+X                  IDM_COPY_FULL
 Ctrl+V                  IDM_PASTE
-Ctrl+L                  IDM_LANDSCAPE_MODE
+// Ctrl+L                  IDM_LANDSCAPE_MODE
 R                       IDM_ROTATE_90_LOSSLESS_CONFIRM
 T                       IDM_ROTATE_270_LOSSLESS_CONFIRM
 W                       IDM_EXPLORE
+
+Home                        IDM_AUTO_ZOOM_FILL
+End                        IDM_AUTO_ZOOM_FIT
+Ctrl+W                    IDM_EXIT
+Ctrl+A                    IDM_EXPLORE
+Down                    IDM_PAN_DOWN
+Up                      IDM_PAN_UP
+MouseDblClk                     IDM_FULL_SCREEN_MODE
+Del                     IDM_MOVE_TO_RECYCLE_BIN_CONFIRM_PERMANENT_DELETE
+V                  IDM_LANDSCAPE_MODE

@@ -83,3 +83,17 @@ jobs:
         msbuild.exe /property:Platform=x64 /property:configuration="Release" src\JPEGView.sln
 
       shell: cmd
+      
+    - name : Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: jpegview
+        path: |
+          src\JPEGView\bin\x64\Release\JPEGView.exe
+          src\JPEGView\bin\x64\Release\JPEGView.ini
+          src\JPEGView\bin\x64\Release\JPEGView.ini.tpl
+          src\JPEGView\bin\x64\Release\NavPanel.png
+          src\JPEGView\bin\x64\Release\readme.html
+          src\JPEGView\bin\x64\Release\KeyMap.txt
+          src\JPEGView\bin\x64\Release\strings_zh.txt
+          src\JPEGView\bin\x64\Release\*.dll

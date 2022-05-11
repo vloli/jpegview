@@ -75,7 +75,7 @@ static const int BRIGHTEN_SHADOWS = 1; // used in AdjustLDC() call
 static const int ZOOM_TEXT_RECT_WIDTH = 70; // zoom label width
 static const int ZOOM_TEXT_RECT_HEIGHT = 25; // zoom label height
 static const int ZOOM_TEXT_RECT_OFFSET = 35; // zoom label offset from right border
-static const int PAN_STEP = 48; // number of pixels to pan if pan with cursor keys (SHIFT+up/down/left/right)
+static const int PAN_STEP = 500; // number of pixels to pan if pan with cursor keys (SHIFT+up/down/left/right)
 
 static const bool SHOW_TIMING_INFO = false; // Set to true for debugging
 
@@ -750,7 +750,7 @@ LRESULT CMainDlg::OnLButtonDown(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM lParam,
 				m_bZoomMode = true;
 				m_dStartZoom = m_dZoom;
 				m_nCapturedX = m_nMouseX; m_nCapturedY = m_nMouseY;
-			} else if ((bCtrl || !bDraggingRequired || bHandleByCropping) && !bTransformPanelShown) {
+			} else if ((!bDraggingRequired || bHandleByCropping) && bCtrl && !bTransformPanelShown) {
 				m_pCropCtl->StartCropping(pointClicked.x, pointClicked.y);
 			} else if (!bTransformPanelShown) {
 				StartDragging(pointClicked.x, pointClicked.y, false);
@@ -993,7 +993,12 @@ LRESULT CMainDlg::OnDisplayedFileChangedOnDisk(UINT /*uMsg*/, WPARAM /*wParam*/,
 }
 
 LRESULT CMainDlg::OnActiveDirectoryFilelistChanged(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/) {
-	if (CSettingsProvider::This().ReloadWhenDisplayedImageChanged() && m_pFileList != NULL && m_pFileList->CurrentFileExists()) {
+	if (CSettingsProvider::This().ReloadWhenDisplayedImageChanged() && m_pFileList != NULL && !m_pFileList->CurrentFileExists()) {
+		ExecuteCommand(IDM_NEXT);
+		m_pFileList->DeleteHistory(true);
+		m_pFileList->Reload(NULL, false);
+		Invalidate(FALSE);
+	}	else if (CSettingsProvider::This().ReloadWhenDisplayedImageChanged() && m_pFileList != NULL) {
 		m_pFileList->Reload(NULL, false);
 		Invalidate(FALSE);
 	}
@@ -3008,7 +3013,7 @@ void CMainDlg::EditINIFile(bool bGlobalINI) {
 }
 
 void CMainDlg::UpdateWindowTitle() {
-	LPCTSTR sCurrentFileName = CurrentFileName(true);
+	LPCTSTR sCurrentFileName = CurrentFileName(false);
 	if (sCurrentFileName == NULL || m_pCurrentImage == NULL) {
 		this->SetWindowText(_T("JPEGView"));
 	} else {
@@ -3020,7 +3025,7 @@ void CMainDlg::UpdateWindowTitle() {
 				sWindowText += " - " + Helpers::SystemTimeToString(pEXIF->GetAcquisitionTime());
 			}
 		}
-		sWindowText += _T(" - JPEGView");
+		// sWindowText += _T(" - JPEGView");
 		this->SetWindowText(sWindowText);
 	}
 }
