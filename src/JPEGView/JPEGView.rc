@@ -277,22 +277,22 @@ BEGIN
     BEGIN
         MENUITEM "Stop slide show/movie\t0xff", IDM_STOP_MOVIE
         MENUITEM SEPARATOR
-        MENUITEM "Open image...",               IDM_OPEN
-        POPUP "Open image with"
-        BEGIN
-            MENUITEM "_empty_",                     IDM_ABOUT
-        END
+        // MENUITEM "Open image...",               IDM_OPEN
+        // POPUP "Open image with"
+        // BEGIN
+            // MENUITEM "_empty_",                     IDM_ABOUT
+        // END
         MENUITEM "Save processed image...\t0x5de", IDM_SAVE
-        MENUITEM "Reload image",                IDM_RELOAD
+        // MENUITEM "Reload image",                IDM_RELOAD
         MENUITEM "Open containing folder in Explorer", IDM_EXPLORE
-        MENUITEM "Print image...",              IDM_PRINT
-        MENUITEM "Batch rename/copy...",        IDM_BATCH_COPY
-        POPUP "Set modification date"
-        BEGIN
-            MENUITEM "to current date",             IDM_TOUCH_IMAGE
-            MENUITEM "to EXIF date",                IDM_TOUCH_IMAGE_EXIF
-            MENUITEM "to EXIF date (all files in folder)", IDM_TOUCH_IMAGE_EXIF_FOLDER
-        END
+        // MENUITEM "Print image...",              IDM_PRINT
+        // MENUITEM "Batch rename/copy...",        IDM_BATCH_COPY
+        // POPUP "Set modification date"
+        // BEGIN
+            // MENUITEM "to current date",             IDM_TOUCH_IMAGE
+            // MENUITEM "to EXIF date",                IDM_TOUCH_IMAGE_EXIF
+            // MENUITEM "to EXIF date (all files in folder)", IDM_TOUCH_IMAGE_EXIF_FOLDER
+        // END
         POPUP "Set as desktop wallpaper"
         BEGIN
             MENUITEM "Use original image",          IDM_SET_WALLPAPER_ORIG
@@ -307,8 +307,8 @@ BEGIN
         MENUITEM "Show filename",               IDM_SHOW_FILENAME
         MENUITEM "Show navigation panel",       IDM_SHOW_NAVPANEL
         MENUITEM SEPARATOR
-        MENUITEM "Next image",                  IDM_NEXT
-        MENUITEM "Previous image",              IDM_PREV
+        // MENUITEM "Next image",                  IDM_NEXT
+        // MENUITEM "Previous image",              IDM_PREV
         POPUP "Navigation"
         BEGIN
             MENUITEM "Loop folder",                 IDM_LOOP_FOLDER
@@ -326,55 +326,55 @@ BEGIN
             MENUITEM "Upcounting",                  IDM_SORT_UPCOUNTING
             MENUITEM "Downcounting",                IDM_SORT_DOWNCOUNTING
         END
-        POPUP "Play folder as slideshow/movie"
-        BEGIN
-            MENUITEM "Slideshow",                   IDM_SLIDESHOW_START
-            MENUITEM "Waiting time\t1 sec",         IDM_SLIDESHOW_1
-            MENUITEM "Waiting time\t2 sec",         IDM_SLIDESHOW_2
-            MENUITEM "Waiting time\t3 sec",         IDM_SLIDESHOW_3
-            MENUITEM "Waiting time\t4 sec",         IDM_SLIDESHOW_4
-            MENUITEM "Waiting time\t5 sec",         IDM_SLIDESHOW_5
-            MENUITEM "Waiting time\t7 sec",         IDM_SLIDESHOW_7
-            MENUITEM "Waiting time\t10 sec",        IDM_SLIDESHOW_10
-            MENUITEM "Waiting time\t20 sec",        IDM_SLIDESHOW_20
-            POPUP "Transition Effect"
-            BEGIN
-                MENUITEM "None",                        IDM_EFFECT_NONE
-                MENUITEM SEPARATOR
-                MENUITEM "Blend",                       IDM_EFFECT_BLEND
-                MENUITEM SEPARATOR
-                MENUITEM "Slide from right",            IDM_EFFECT_SLIDE_RL
-                MENUITEM "Slide from left",             IDM_EFFECT_SLIDE_LR
-                MENUITEM "Slide from top",              IDM_EFFECT_SLIDE_TB
-                MENUITEM "Slide from bottom",           IDM_EFFECT_SLIDE_BT
-                MENUITEM SEPARATOR
-                MENUITEM "Roll from right",             IDM_EFFECT_ROLL_RL
-                MENUITEM "Roll from left",              IDM_EFFECT_ROLL_LR
-                MENUITEM "Roll from top",               IDM_EFFECT_ROLL_TB
-                MENUITEM "Roll from bottom",            IDM_EFFECT_ROLL_BT
-                MENUITEM SEPARATOR
-                MENUITEM "Scroll from right",           IDM_EFFECT_SCROLL_RL
-                MENUITEM "Scroll from left",            IDM_EFFECT_SCROLL_LR
-                MENUITEM "Scroll from top",             IDM_EFFECT_SCROLL_TB
-                MENUITEM "Scroll from bottom",          IDM_EFFECT_SCROLL_BT
-            END
-            POPUP "Transition Speed"
-            BEGIN
-                MENUITEM "Very fast",                   IDM_EFFECTTIME_VERY_FAST
-                MENUITEM "Fast",                        IDM_EFFECTTIME_FAST
-                MENUITEM "Normal",                      IDM_EFFECTTIME_NORMAL
-                MENUITEM "Slow",                        IDM_EFFECTTIME_SLOW
-                MENUITEM "Very slow",                   IDM_EFFECTTIME_VERY_SLOW
-            END
-            MENUITEM SEPARATOR
-            MENUITEM "Movie",                       IDM_MOVIE_START_FPS
-            MENUITEM "5 fps",                       IDM_MOVIE_5_FPS
-            MENUITEM "10 fps",                      IDM_MOVIE_10_FPS
-            MENUITEM "25 fps",                      IDM_MOVIE_25_FPS
-            MENUITEM "30 fps",                      IDM_MOVIE_30_FPS
-            MENUITEM "50 fps",                      IDM_MOVIE_50_FPS
-            MENUITEM "100 fps",                     IDM_MOVIE_100_FPS
-        END
+        // POPUP "Play folder as slideshow/movie"
+        // BEGIN
+            // MENUITEM "Slideshow",                   IDM_SLIDESHOW_START
+            // MENUITEM "Waiting time\t1 sec",         IDM_SLIDESHOW_1
+            // MENUITEM "Waiting time\t2 sec",         IDM_SLIDESHOW_2
+            // MENUITEM "Waiting time\t3 sec",         IDM_SLIDESHOW_3
+            // MENUITEM "Waiting time\t4 sec",         IDM_SLIDESHOW_4
+            // MENUITEM "Waiting time\t5 sec",         IDM_SLIDESHOW_5
+            // MENUITEM "Waiting time\t7 sec",         IDM_SLIDESHOW_7
+            // MENUITEM "Waiting time\t10 sec",        IDM_SLIDESHOW_10
+            // MENUITEM "Waiting time\t20 sec",        IDM_SLIDESHOW_20
+            // POPUP "Transition Effect"
+            // BEGIN
+                // MENUITEM "None",                        IDM_EFFECT_NONE
+                // MENUITEM SEPARATOR
+                // MENUITEM "Blend",                       IDM_EFFECT_BLEND
+                // MENUITEM SEPARATOR
+                // MENUITEM "Slide from right",            IDM_EFFECT_SLIDE_RL
+                // MENUITEM "Slide from left",             IDM_EFFECT_SLIDE_LR
+                // MENUITEM "Slide from top",              IDM_EFFECT_SLIDE_TB
+                // MENUITEM "Slide from bottom",           IDM_EFFECT_SLIDE_BT
+                // MENUITEM SEPARATOR
+                // MENUITEM "Roll from right",             IDM_EFFECT_ROLL_RL
+                // MENUITEM "Roll from left",              IDM_EFFECT_ROLL_LR
+                // MENUITEM "Roll from top",               IDM_EFFECT_ROLL_TB
+                // MENUITEM "Roll from bottom",            IDM_EFFECT_ROLL_BT
+                // MENUITEM SEPARATOR
+                // MENUITEM "Scroll from right",           IDM_EFFECT_SCROLL_RL
+                // MENUITEM "Scroll from left",            IDM_EFFECT_SCROLL_LR
+                // MENUITEM "Scroll from top",             IDM_EFFECT_SCROLL_TB
+                // MENUITEM "Scroll from bottom",          IDM_EFFECT_SCROLL_BT
+            // END
+            // POPUP "Transition Speed"
+            // BEGIN
+                // MENUITEM "Very fast",                   IDM_EFFECTTIME_VERY_FAST
+                // MENUITEM "Fast",                        IDM_EFFECTTIME_FAST
+                // MENUITEM "Normal",                      IDM_EFFECTTIME_NORMAL
+                // MENUITEM "Slow",                        IDM_EFFECTTIME_SLOW
+                // MENUITEM "Very slow",                   IDM_EFFECTTIME_VERY_SLOW
+            // END
+            // MENUITEM SEPARATOR
+            // MENUITEM "Movie",                       IDM_MOVIE_START_FPS
+            // MENUITEM "5 fps",                       IDM_MOVIE_5_FPS
+            // MENUITEM "10 fps",                      IDM_MOVIE_10_FPS
+            // MENUITEM "25 fps",                      IDM_MOVIE_25_FPS
+            // MENUITEM "30 fps",                      IDM_MOVIE_30_FPS
+            // MENUITEM "50 fps",                      IDM_MOVIE_50_FPS
+            // MENUITEM "100 fps",                     IDM_MOVIE_100_FPS
+        // END
         MENUITEM SEPARATOR
         POPUP "Transform image"
         BEGIN
@@ -400,8 +400,8 @@ BEGIN
         MENUITEM "Local density correction",    IDM_LDC
         MENUITEM "Keep parameters",             IDM_KEEP_PARAMETERS
         MENUITEM SEPARATOR
-        MENUITEM "Save parameters to DB",       IDM_SAVE_PARAM_DB
-        MENUITEM "Clear parameters from DB",    IDM_CLEAR_PARAM_DB
+        // MENUITEM "Save parameters to DB",       IDM_SAVE_PARAM_DB
+        // MENUITEM "Clear parameters from DB",    IDM_CLEAR_PARAM_DB
         MENUITEM SEPARATOR
         POPUP "Zoom"
         BEGIN
