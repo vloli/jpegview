@@ -751,7 +751,18 @@ LRESULT CMainDlg::OnLButtonDown(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM lParam,
 				m_dStartZoom = m_dZoom;
 				m_nCapturedX = m_nMouseX; m_nCapturedY = m_nMouseY;
 			} else if ((!bDraggingRequired || bHandleByCropping) && bCtrl && !bTransformPanelShown) {
-				m_pCropCtl->StartCropping(pointClicked.x, pointClicked.y);
+				int Vw = m_virtualImageSize.cx; //图片宽度
+				int Vh = m_virtualImageSize.cy; //图片高度
+				int Vx = (m_clientRect.Width() - m_virtualImageSize.cx) / 2; //图片X
+				int Vy = (m_clientRect.Height() - m_virtualImageSize.cy) / 2; //图片y
+
+				int nX, nY;
+				nX = max(pointClicked.x, Vx);
+				nY = max(pointClicked.y, Vy);
+				nX = min(nX, Vx + Vw);
+				nY = min(nY, Vy + Vh);
+
+				m_pCropCtl->StartCropping(nX, nY);
 			} else if (!bTransformPanelShown) {
 				StartDragging(pointClicked.x, pointClicked.y, false);
 			} 
@@ -875,7 +886,20 @@ LRESULT CMainDlg::OnMouseMove(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM lParam, B
 	} else if (m_bDragging) {
 		DoDragging();
 	} else if (m_pCropCtl->IsCropping()) {
-		bMouseCursorSet = m_pCropCtl->DoCropping(m_nMouseX, m_nMouseY);
+		int Vw = m_virtualImageSize.cx; //图片宽度
+		int Vh = m_virtualImageSize.cy; //图片高度
+		int Vx = (m_clientRect.Width() - m_virtualImageSize.cx) / 2; //图片X
+		int Vy = (m_clientRect.Height() - m_virtualImageSize.cy) / 2; //图片y
+		int Vx2 = Vx + Vw;
+		int Vy2 = Vy + Vh;
+
+		int nX, nY;
+		nX = max(m_nMouseX, Vx);
+		nY = max(m_nMouseY, Vy);
+		nX = min(nX, Vx2);
+		nY = min(nY, Vy2);
+
+		bMouseCursorSet = m_pCropCtl->DoCropping(nX, nY);
 	} else if (!m_pPanelMgr->OnMouseMove(m_nMouseX, m_nMouseY)) {
 		m_pZoomNavigatorCtl->OnMouseMove(nOldMouseX, nOldMouseY);
 	}
